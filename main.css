@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 :root {
   --DM-Sans: "DM Sans", sans-serif;
@@ -13,14 +13,15 @@
 }
 
 body {
-  background-color: #F1F2F2;
+  background-color: #f1f2f2;
   /* width: 100%; */
   /* height: 100%; */
 }
 
 /* LENIS */
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -124,14 +125,14 @@ html.lenis, html.lenis body {
   /* position: absolute; */
   /* top: 0%; */
   transform: translate(165%, -40%);
-  color: #F1F2F2;
+  color: #f1f2f2;
   width: 35vw;
   height: 35vw;
   font-family: var(--DM-Sans);
   font-size: clamp(0.8rem, 1.5vw, 1.4rem);
   border-radius: 50%;
   padding: 3.1vw;
-  background-color: #012B55;
+  background-color: #012b55;
 }
 
 @media (max-width: 768px) {
@@ -178,7 +179,6 @@ html.lenis, html.lenis body {
     transform: none;
     padding: 4vw;
   }
-
 }
 
 /* HEADER DONE */
@@ -187,11 +187,12 @@ html.lenis, html.lenis body {
 
 .emp-intro {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20vw;
+  /* margin-top: 20vh; */
   position: relative;
   /* background-color: tomato; */
 }
@@ -210,6 +211,23 @@ html.lenis, html.lenis body {
   }
 }
 
+@media (min-width: 1200px) {
+  .emp-intro {
+    margin-top: 20vh;
+  }
+}
+
+.coin-container {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20vw;
+  position: relative;
+  /* background-color: tomato; */
+}
+
 .coin-outer {
   width: fit-content;
   height: fit-content;
@@ -217,7 +235,7 @@ html.lenis, html.lenis body {
   border-radius: 50%;
   padding: 15px;
   position: absolute;
-  bottom: 5vw;
+  bottom: 100%;
   left: 5vw;
 }
 
@@ -229,14 +247,13 @@ html.lenis, html.lenis body {
   height: var(--var-size);
   border-radius: 50%;
   /* border: 1px #242424; */
-  
+
   transform-style: preserve-3d;
   animation-name: spin;
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   /* background-color: green; */
-  
 
   &:before {
     background-color: #ff9900;
@@ -295,11 +312,11 @@ html.lenis, html.lenis body {
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .coin-outer {
     left: auto;
-    bottom: 15%;
-}
+    bottom: 100%;
+  }
 }
 
 /* INTRO DONE */
@@ -377,15 +394,15 @@ html.lenis, html.lenis body {
 }
 
 .modul-1 {
-  color: #1D80CC;
+  color: #1d80cc;
 }
 
 .modul-2 {
-  color: #FA5A38;
+  color: #fa5a38;
 }
 
 .modul-3 {
-  color: #FA9150;
+  color: #fa9150;
 }
 
 .modul1-btn {
@@ -394,7 +411,7 @@ html.lenis, html.lenis body {
   color: #242424;
   text-decoration: none;
   padding: 5px;
-  border: 3px solid #1D80CC;
+  border: 3px solid #1d80cc;
 }
 
 .modul2-btn {
@@ -403,7 +420,7 @@ html.lenis, html.lenis body {
   color: #242424;
   text-decoration: none;
   padding: 5px;
-  border: 3px solid #FA5A38;
+  border: 3px solid #fa5a38;
 }
 
 .modul3-btn {
@@ -412,9 +429,8 @@ html.lenis, html.lenis body {
   color: #242424;
   text-decoration: none;
   padding: 5px;
-  border: 3px solid #FA9150;
+  border: 3px solid #fa9150;
 }
-
 
 .modul-content {
   width: max-content;
@@ -444,7 +460,7 @@ html.lenis, html.lenis body {
   overflow: hidden;
   width: 100%;
   height: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .modul-content:hover .video-overlay {
@@ -465,6 +481,43 @@ html.lenis, html.lenis body {
   text-align: center;
 }
 
+.popup-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.popup-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  border-radius: 5px;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.popup-video span {
+  position: absolute;
+  right: 20px;
+  font-size: 3em;
+  font-weight: bolder;
+  color: #fff;
+  z-index: 100;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .popup-video video {
+    width: 95%;
+  }
+}
 
 /* CONTENT DONE */
 
@@ -519,7 +572,7 @@ html.lenis, html.lenis body {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: '';
+  content: "";
 }
 
 .swiper-button-prev,
@@ -549,8 +602,7 @@ html.lenis, html.lenis body {
   right: 5vw;
 }
 
-@media (max-width:690px) {
-
+@media (max-width: 690px) {
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
@@ -688,7 +740,7 @@ html.lenis, html.lenis body {
   height: 80vh;
   display: flex;
   flex-direction: column;
-  background-color: #012B55;
+  background-color: #012b55;
   padding: 35px 50px;
 }
 
@@ -705,7 +757,7 @@ html.lenis, html.lenis body {
   font-family: var(--DM-Sans);
   font-style: italic;
   font-weight: 500;
-  color: #F1F2F2;
+  color: #f1f2f2;
   font-size: clamp(3rem, 8vw, 10rem);
   /* background-color: tomato; */
   margin: 0;
@@ -725,7 +777,7 @@ html.lenis, html.lenis body {
 }
 
 .footer-content a:hover {
-  color: #F1F2F2;
+  color: #f1f2f2;
 }
 
 .footer-link {
@@ -752,7 +804,7 @@ html.lenis, html.lenis body {
 
 .footer-by p {
   font-family: var(--DM-Sans);
-  color: #F1F2F2;
+  color: #f1f2f2;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -772,7 +824,7 @@ html.lenis, html.lenis body {
 
 .footer-sosmed a {
   font-family: var(--DM-Sans);
-  color: #F1F2F2;
+  color: #f1f2f2;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
